@@ -21,6 +21,11 @@ public class Driver {
         return driver;
     }
 
+    public static void openUrl(String url) {
+        getDriver().manage().window().maximize();
+        getDriver().get(url);
+    }
+
     public static WebElement findElementByLocator(By locator) {
         return driver.findElement(locator);
     }
