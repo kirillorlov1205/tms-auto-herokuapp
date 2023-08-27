@@ -1,3 +1,5 @@
+package specs;
+
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import support.BaseSetUp;

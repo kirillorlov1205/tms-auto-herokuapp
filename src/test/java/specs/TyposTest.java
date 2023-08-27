@@ -1,3 +1,5 @@
+package specs;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +12,7 @@ import java.util.List;
 
 public class TyposTest extends BaseSetUp {
 
-    @Test
+    @Test(testName = "Verify text spelling")
     public void verifyTextSpelling() {
         Utilities.getPageLinkElementByName("Typos").click();
         List<WebElement> list = Driver.findElementsByLocator(Constants.TEXT_LOCATOR);
