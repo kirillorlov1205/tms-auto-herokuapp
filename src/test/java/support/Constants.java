@@ -16,11 +16,14 @@ public class Constants {
     public static final By INPUT_FIELD_LOCATOR = By.xpath("//input[@type='number']");
 
     //    Typos
-    public static final By TEXT_LOCATOR = By.xpath("//p");
+    public static final By PARAGRAPH_LOCATOR = By.xpath("//p[2]");
+    public static final String PARAGRAPH = "Sometimes you'll see a typo, other times you won,t.";
+
+    //    Hover
     public static final By PROFILE_LOCATOR = By.xpath("//div[@class='figure']");
     public static final By PROFILE_NAME_LOCATOR = By.xpath("//h5");
 
-//    Notification Messages
+    //    Notification Messages
     public static final By NOTIFICATION_MESSAGE_LOCATOR = By.xpath("//div[@class='flash notice']");
     public static final By INVOKE_NOTIFICATION_MESSAGE_BUTTON_LOCATOR = By.xpath("//a[@href='/notification_message']");
 }
