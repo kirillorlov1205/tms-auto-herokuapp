@@ -1,15 +1,15 @@
-package specs;
+package selenium_basic;
 
-import Utils.Support;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import support.Constants;
+import Utils.Constants;
+import page.MainPage;
 
 public class AddRemoveTest extends BaseTest {
 
     @Test(testName = "Verify Element addition and removing")
     public void verifyElementAdditionAndRemoving() {
-        Support.getPageLinkElementByName("Add/Remove Elements").click();
+        MainPage.getPageLinkElementByName("Add/Remove Elements").click();
 
         findElement(Constants.ADD_ELEMENT_BUTTON_LOCATOR).click();
         findElement(Constants.ADD_ELEMENT_BUTTON_LOCATOR).click();

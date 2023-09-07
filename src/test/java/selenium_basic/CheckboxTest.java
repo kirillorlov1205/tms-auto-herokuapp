@@ -1,11 +1,11 @@
-package specs;
+package selenium_basic;
 
-import Utils.Support;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import support.Constants;
+import Utils.Constants;
+import page.MainPage;
 
 public class CheckboxTest extends BaseTest {
 
@@ -13,7 +13,7 @@ public class CheckboxTest extends BaseTest {
     @BeforeMethod
     public void beforeMethod() {
         openPage("http://the-internet.herokuapp.com/");
-        Support.getPageLinkElementByName("Checkboxes").click();
+        MainPage.getPageLinkElementByName("Checkboxes").click();
     }
 
     @Test(testName = "Verify first checkbox Selection")

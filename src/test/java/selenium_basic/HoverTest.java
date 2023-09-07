@@ -1,13 +1,13 @@
-package specs;
+package selenium_basic;
 
-import Utils.Support;
 import driver.DriverSingleTone;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import support.Constants;
+import Utils.Constants;
+import page.MainPage;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +16,7 @@ public class HoverTest extends BaseTest {
 
     @Test
     public void verifyLinksTransaction() {
-        Support.getPageLinkElementByName("Hovers").click();
+        MainPage.getPageLinkElementByName("Hovers").click();
         Actions action = new Actions(DriverSingleTone.getInstance().getDriver());
         SoftAssert softAssert = new SoftAssert();
 

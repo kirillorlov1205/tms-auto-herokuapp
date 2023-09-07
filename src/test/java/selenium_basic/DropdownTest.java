@@ -1,11 +1,11 @@
-package specs;
+package selenium_basic;
 
-import Utils.Support;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import page.MainPage;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class DropdownTest extends BaseTest {
 
     @Test
     public void verifyDropdownSelection() {
-        Support.getPageLinkElementByName("Dropdown").click();
+        MainPage.getPageLinkElementByName("Dropdown").click();
         Select select = new Select(findElement(By.xpath("//select[@id='dropdown']")));
         List<WebElement> optionsList = select.getOptions();
 

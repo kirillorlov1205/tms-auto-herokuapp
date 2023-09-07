@@ -1,10 +1,10 @@
-package specs;
+package selenium_basic;
 
-import Utils.Support;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import page.MainPage;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class SortableDataTablesTest extends BaseTest{
 
     @Test(testName = "Verify last name column")
     public void verifyLastNameColumn() {
-        Support.getPageLinkElementByName("Sortable Data Tables").click();
+        MainPage.getPageLinkElementByName("Sortable Data Tables").click();
         SoftAssert softAssert = new SoftAssert();
 
         List<String> namesList = List.of("Smith", "Bach", "Doe", "Conway");

@@ -1,11 +1,11 @@
-package specs;
+package selenium_basic;
 
-import Utils.Support;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import support.Constants;
+import Utils.Constants;
+import page.MainPage;
 
 public class InputTest extends BaseTest {
 
@@ -13,7 +13,7 @@ public class InputTest extends BaseTest {
     @BeforeMethod
     public void beforeMethod() {
         openPage("http://the-internet.herokuapp.com");
-        Support.getPageLinkElementByName("Inputs").click();
+        MainPage.getPageLinkElementByName("Inputs").click();
     }
 
     @Test(testName = "Verify number input")
