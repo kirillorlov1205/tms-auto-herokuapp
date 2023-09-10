@@ -4,25 +4,27 @@ import Utils.Waiter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class DynamicControlsPage extends BasePage {
 
     @FindBy(xpath = "//input[@type='checkbox']")
-    WebElement checkbox;
+    private List<WebElement> checkboxesList;
 
     @FindBy(xpath = "//button[contains(text(),'Remove')]")
-    WebElement removeCheckboxButton;
+    private WebElement removeCheckboxButton;
 
     @FindBy(xpath = "//form[@id='checkbox-example']/p[@id='message']")
-    WebElement checkboxStatusMessage;
+    private WebElement checkboxStatusMessage;
 
     @FindBy(xpath = "//input[@type='text']")
-    WebElement input;
+    private WebElement input;
 
     @FindBy(xpath = "//button[contains(text(),'Enable')]")
-    WebElement enableInputButton;
+    private WebElement enableInputButton;
 
     @FindBy(xpath = "//form[@id='input-example']/p[@id='message']")
-    WebElement inputStatusMessage;
+    private WebElement inputStatusMessage;
 
     public DynamicControlsPage clickRemoveCheckboxButton() {
         removeCheckboxButton.click();
@@ -33,8 +35,8 @@ public class DynamicControlsPage extends BasePage {
         return Waiter.waitElementToBeDisplayed(checkboxStatusMessage);
     }
 
-    public WebElement getCheckbox() {
-        return checkbox;
+    public List<WebElement> getCheckbox() {
+        return checkboxesList;
     }
 
     public WebElement getInput() {

@@ -19,12 +19,13 @@ public class FileUploadPageTest extends BaseTest {
     @Test(testName = "Verify file uploading")
     public void verifyFileUploading() {
         MainPage.getPageLinkElementByName("File Upload").click();
+        String fileName = "testFile";
+        String filePath = System.getProperty("user.dir") + "/src/test/resources/" + fileName;
         String actualFileName = fileUploadPageService
-                .sendFileToFileInputByFilePath("C:\\Users\\Kiryl.Arlou\\IdeaProjects\\tms-auto-herokuapp\\src\\test" +
-                        "\\resources\\testFile")
+                .sendFileToFileInputByFilePath(filePath)
                 .clickSubmitButton()
                 .getUploadedFileText();
-        String expectedFileName = "testFile";
+        String expectedFileName = fileName;
         Assert.assertEquals(actualFileName, expectedFileName, "File name doesn't match expected");
     }
 }

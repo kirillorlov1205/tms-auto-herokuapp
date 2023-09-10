@@ -9,8 +9,8 @@ import service.MainPageService;
 
 public class DynamicControlsPageTest extends BaseTest {
 
-    DynamicControlsPageService dynamicControlsPageService;
-    MainPageService mainPageService;
+    private DynamicControlsPageService dynamicControlsPageService;
+    private MainPageService mainPageService;
 
     @BeforeClass
     private void setup() {
@@ -27,9 +27,7 @@ public class DynamicControlsPageTest extends BaseTest {
         String actualMessage = dynamicControlsPageService.getCheckboxStatusMessageText();
         String expectedMessage = "It's gone!";
         softAssert.assertEquals(actualMessage, expectedMessage, "Actual message doesn't match expected");
-
-//TBD        no such element: Unable to locate element: {"method":"xpath","selector":"//input[@type='checkbox']"}
-        softAssert.assertFalse(dynamicControlsPageService.getCheckbox().isDisplayed());
+        softAssert.assertTrue(dynamicControlsPageService.getCheckboxesList().isEmpty());
         softAssert.assertAll();
     }
 

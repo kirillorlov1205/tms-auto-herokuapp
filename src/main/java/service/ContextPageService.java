@@ -6,7 +6,7 @@ import page.ContextPage;
 
 public class ContextPageService {
 
-    ContextPage contextPage;
+    private ContextPage contextPage;
 
     public void contextClick() {
         contextPage = new ContextPage();

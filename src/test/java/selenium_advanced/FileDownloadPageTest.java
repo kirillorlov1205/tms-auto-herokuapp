@@ -10,11 +10,6 @@ import selenium_basic.BaseTest;
 import java.io.File;
 
 public class FileDownloadPageTest extends BaseTest {
-    /* TBD
-    5) File Download (*)
-- Изучить https://www.swtestacademy.com/download-file-in-selenium/
-- Скачать файл
-- Проверить наличие файла на файловой системе*/
 
     @Test(testName = "Verify file downloading")
     public void verifyFileDownloading() throws InterruptedException {
@@ -22,8 +17,9 @@ public class FileDownloadPageTest extends BaseTest {
         WebElement fileLink = findElement(By.xpath("//a[contains(text(),'trip.txt')]"));
         fileLink.click();
         Thread.sleep(1500);
+        String filePath = System.getProperty("user.dir") + "Downloads";
 
-        File folder = new File(System.getProperty("C:\\Users\\Kiryl.Arlou\\Downloads"));
+        File folder = new File(System.getProperty(filePath));
 //List the files on that folder
         File[] listOfFiles = folder.listFiles();
         boolean found = false;

@@ -7,16 +7,16 @@ import org.openqa.selenium.support.FindBy;
 public class FramePage extends BasePage {
 
     @FindBy(xpath = "//a[contains(text(),'iFrame')]")
-    WebElement iframeLink;
+    private WebElement iframeLink;
 
     @FindBy(xpath = "//iframe[@id='mce_0_ifr']")
-    WebElement iframe;
+    private WebElement iframe;
 
     @FindBy(xpath = "//div[@id='uploaded-files']")
-    WebElement uploadedFile;
+    private WebElement uploadedFile;
 
     @FindBy(xpath = "//p")
-    WebElement paragraph;
+    private WebElement paragraph;
 
     public FramePage switchToIframe() {
         DriverSingleTone.getInstance().getDriver().switchTo().frame(iframe);

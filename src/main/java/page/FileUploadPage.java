@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 public class FileUploadPage extends BasePage {
 
     @FindBy(xpath = "//input[@id='file-upload']")
-    WebElement fileInput;
+    private WebElement fileInput;
 
     @FindBy(xpath = "//input[@class='button']")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     @FindBy(xpath = "//div[@id='uploaded-files']")
-    WebElement uploadedFile;
+    private WebElement uploadedFile;
 
     public FileUploadPage sendFileToFileInputByFilePath(String filePath) {
         fileInput.sendKeys(filePath);

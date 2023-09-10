@@ -3,9 +3,11 @@ package service;
 import org.openqa.selenium.WebElement;
 import page.DynamicControlsPage;
 
+import java.util.List;
+
 public class DynamicControlsPageService {
 
-    DynamicControlsPage dynamicControlsPage;
+    private DynamicControlsPage dynamicControlsPage;
 
     public String getCheckboxStatusMessageText() {
         dynamicControlsPage = new DynamicControlsPage();
@@ -18,7 +20,7 @@ public class DynamicControlsPageService {
         return this;
     }
 
-    public WebElement getCheckbox() {
+    public List<WebElement> getCheckboxesList() {
         dynamicControlsPage = new DynamicControlsPage();
         return dynamicControlsPage.getCheckbox();
     }

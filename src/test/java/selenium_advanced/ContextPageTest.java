@@ -9,8 +9,8 @@ import service.MainPageService;
 
 public class ContextPageTest extends BaseTest {
 
-    ContextPageService contextMenuPageService;
-    MainPageService mainPageService;
+    private ContextPageService contextMenuPageService;
+    private MainPageService mainPageService;
 
     @BeforeClass
     private void setup() {
