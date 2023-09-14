@@ -1,8 +1,11 @@
-package Utils;
+package utils;
 
 import org.openqa.selenium.By;
 
 public class Constants {
+
+    private Constants() {
+    }
 
     //    Add/Remove element page
     public static final By ADD_ELEMENT_BUTTON_LOCATOR = By.xpath("//button[text()='Add Element']");

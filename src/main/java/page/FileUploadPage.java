@@ -24,7 +24,7 @@ public class FileUploadPage extends BasePage {
         return this;
     }
 
-    public WebElement getUploadedFile() {
-        return uploadedFile;
+    public String getUploadedFileText() {
+        return uploadedFile.getText();
     }
 }

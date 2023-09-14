@@ -3,17 +3,25 @@ package selenium_basic;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import page.MainPage;
+import service.MainPageService;
 
 import java.util.List;
 
 public class DropdownTest extends BaseTest {
 
+    private MainPageService mainPageService;
+
+    @BeforeClass
+    public void setup() {
+        mainPageService = new MainPageService();
+    }
+
     @Test
     public void verifyDropdownSelection() {
-        MainPage.getPageLinkElementByName("Dropdown").click();
+        mainPageService.clickPageLinkElementByName("Dropdown");
         Select select = new Select(findElement(By.xpath("//select[@id='dropdown']")));
         List<WebElement> optionsList = select.getOptions();
 

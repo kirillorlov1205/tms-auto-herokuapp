@@ -1,8 +1,8 @@
 package page;
 
-import Utils.Waiter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Waiter;
 
 import java.util.List;
 
@@ -31,16 +31,16 @@ public class DynamicControlsPage extends BasePage {
         return this;
     }
 
-    public WebElement getCheckboxStatusMessageText() {
-        return Waiter.waitElementToBeDisplayed(checkboxStatusMessage);
+    public String getCheckboxStatusMessageText() {
+        return Waiter.waitElementToBeDisplayed(checkboxStatusMessage).getText();
     }
 
-    public List<WebElement> getCheckbox() {
-        return checkboxesList;
+    public boolean isCheckboxListEmpty() {
+        return checkboxesList.isEmpty();
     }
 
-    public WebElement getInput() {
-        return input;
+    public boolean isInputEnabled() {
+        return input.isEnabled();
     }
 
     public DynamicControlsPage clickEnableInputButton() {
@@ -48,7 +48,7 @@ public class DynamicControlsPage extends BasePage {
         return this;
     }
 
-    public WebElement getInputStatusMessage() {
-        return Waiter.waitElementToBeDisplayed(inputStatusMessage);
+    public String getInputStatusMessageText() {
+        return Waiter.waitElementToBeDisplayed(inputStatusMessage).getText();
     }
 }

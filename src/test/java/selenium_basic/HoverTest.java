@@ -4,19 +4,27 @@ import driver.DriverSingleTone;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import Utils.Constants;
-import page.MainPage;
+import service.MainPageService;
+import utils.Constants;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HoverTest extends BaseTest {
 
+    private MainPageService mainPageService;
+
+    @BeforeClass
+    public void setup() {
+        mainPageService = new MainPageService();
+    }
+
     @Test
     public void verifyLinksTransaction() {
-        MainPage.getPageLinkElementByName("Hovers").click();
+        mainPageService.clickPageLinkElementByName("Hovers");
         Actions action = new Actions(DriverSingleTone.getInstance().getDriver());
         SoftAssert softAssert = new SoftAssert();
 

@@ -1,19 +1,27 @@
 package selenium_basic;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import Utils.Constants;
-import page.MainPage;
+import service.MainPageService;
+import utils.Constants;
 
 public class CheckboxTest extends BaseTest {
+
+    private MainPageService mainPageService;
+
+    @BeforeClass
+    public void setup() {
+        mainPageService = new MainPageService();
+    }
 
     @Override
     @BeforeMethod
     public void beforeMethod() {
         openPage("http://the-internet.herokuapp.com/");
-        MainPage.getPageLinkElementByName("Checkboxes").click();
+        mainPageService.clickPageLinkElementByName("Checkboxes");
     }
 
     @Test(testName = "Verify first checkbox Selection")

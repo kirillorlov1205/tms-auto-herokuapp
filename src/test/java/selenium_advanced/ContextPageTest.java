@@ -20,7 +20,7 @@ public class ContextPageTest extends BaseTest {
 
     @Test(testName = "Verify alert text")
     public void verifyAlertText() {
-        mainPageService.getPageLinkElementByName("Context Menu").click();
+        mainPageService.clickPageLinkElementByName("Context Menu");
         contextMenuPageService.contextClick();
 
         String actualAlertText = contextMenuPageService.getTextFromAlert();

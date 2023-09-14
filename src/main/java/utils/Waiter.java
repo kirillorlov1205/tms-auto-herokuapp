@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import driver.DriverSingleTone;
 import org.openqa.selenium.By;

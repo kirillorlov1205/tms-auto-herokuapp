@@ -18,21 +18,13 @@ public class FramePage extends BasePage {
     @FindBy(xpath = "//p")
     private WebElement paragraph;
 
-    public FramePage switchToIframe() {
-        DriverSingleTone.getInstance().getDriver().switchTo().frame(iframe);
-        return this;
-    }
-
-    public WebElement getParagraph() {
-        return paragraph;
-    }
-
-    public WebElement getUploadedFile() {
-        return uploadedFile;
-    }
-
     public FramePage clickIframeLink() {
         iframeLink.click();
         return this;
+    }
+
+    public String getIframeText() {
+        DriverSingleTone.getInstance().getDriver().switchTo().frame(iframe);
+        return paragraph.getText();
     }
 }

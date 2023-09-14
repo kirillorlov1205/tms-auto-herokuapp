@@ -8,9 +8,7 @@ public class FramePageService {
 
     public String getIframeText() {
         framesPage = new FramePage();
-        return framesPage
-                .switchToIframe()
-                .getParagraph().getText();
+        return framesPage.getIframeText();
     }
 
     public FramePageService clickIframeLink() {
