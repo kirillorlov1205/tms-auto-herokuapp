@@ -2,18 +2,26 @@ package selenium_basic;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import Utils.Constants;
-import page.MainPage;
+import service.MainPageService;
+import utils.Constants;
 
 public class InputTest extends BaseTest {
+
+    private MainPageService mainPageService;
+
+    @BeforeClass
+    public void setup() {
+        mainPageService = new MainPageService();
+    }
 
     @Override
     @BeforeMethod
     public void beforeMethod() {
         openPage("http://the-internet.herokuapp.com");
-        MainPage.getPageLinkElementByName("Inputs").click();
+        mainPageService.clickPageLinkElementByName("Inputs");
     }
 
     @Test(testName = "Verify number input")

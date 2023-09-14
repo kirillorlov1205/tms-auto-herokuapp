@@ -20,6 +20,6 @@ public class FileUploadPageService {
 
     public String getUploadedFileText() {
         fileUploadPage = new FileUploadPage();
-        return fileUploadPage.getUploadedFile().getText();
+        return fileUploadPage.getUploadedFileText();
     }
 }

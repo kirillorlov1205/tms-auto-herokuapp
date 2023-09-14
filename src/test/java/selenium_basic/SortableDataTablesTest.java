@@ -2,17 +2,25 @@ package selenium_basic;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import page.MainPage;
+import service.MainPageService;
 
 import java.util.List;
 
-public class SortableDataTablesTest extends BaseTest{
+public class SortableDataTablesTest extends BaseTest {
+
+    private MainPageService mainPageService;
+
+    @BeforeClass
+    public void setup() {
+        mainPageService = new MainPageService();
+    }
 
     @Test(testName = "Verify last name column")
     public void verifyLastNameColumn() {
-        MainPage.getPageLinkElementByName("Sortable Data Tables").click();
+        mainPageService.clickPageLinkElementByName("Sortable Data Tables");
         SoftAssert softAssert = new SoftAssert();
 
         List<String> namesList = List.of("Smith", "Bach", "Doe", "Conway");

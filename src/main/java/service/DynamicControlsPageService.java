@@ -1,17 +1,19 @@
 package service;
 
-import org.openqa.selenium.WebElement;
 import page.DynamicControlsPage;
-
-import java.util.List;
 
 public class DynamicControlsPageService {
 
     private DynamicControlsPage dynamicControlsPage;
 
-    public String getCheckboxStatusMessageText() {
+    public DynamicControlsPageService clickEnableInputButton() {
         dynamicControlsPage = new DynamicControlsPage();
-        return dynamicControlsPage.getCheckboxStatusMessageText().getText();
+        dynamicControlsPage.clickEnableInputButton();
+        return this;
+    }
+
+    public String getCheckboxStatusMessageText() {
+        return dynamicControlsPage.getCheckboxStatusMessageText();
     }
 
     public DynamicControlsPageService clickRemoveCheckboxButton() {
@@ -20,24 +22,15 @@ public class DynamicControlsPageService {
         return this;
     }
 
-    public List<WebElement> getCheckboxesList() {
-        dynamicControlsPage = new DynamicControlsPage();
-        return dynamicControlsPage.getCheckbox();
+    public boolean isCheckboxListEmpty() {
+        return dynamicControlsPage.isCheckboxListEmpty();
     }
 
-    public WebElement getInput() {
-        dynamicControlsPage = new DynamicControlsPage();
-        return dynamicControlsPage.getInput();
-    }
-
-    public DynamicControlsPageService clickEnableInputButton() {
-        dynamicControlsPage = new DynamicControlsPage();
-        dynamicControlsPage.clickEnableInputButton();
-        return this;
+    public boolean isInputEnabled() {
+        return dynamicControlsPage.isInputEnabled();
     }
 
     public String getInputStatusMessageText() {
-        dynamicControlsPage = new DynamicControlsPage();
-        return dynamicControlsPage.getInputStatusMessage().getText();
+        return dynamicControlsPage.getInputStatusMessageText();
     }
 }

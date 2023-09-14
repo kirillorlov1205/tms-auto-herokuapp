@@ -21,27 +21,27 @@ public class DynamicControlsPageTest extends BaseTest {
     @Test(testName = "Verify checkbox removing")
     public void verifyCheckboxRemoving() {
         SoftAssert softAssert = new SoftAssert();
-        mainPageService.getPageLinkElementByName("Dynamic Controls").click();
+        mainPageService.clickPageLinkElementByName("Dynamic Controls");
         dynamicControlsPageService.clickRemoveCheckboxButton();
 
         String actualMessage = dynamicControlsPageService.getCheckboxStatusMessageText();
         String expectedMessage = "It's gone!";
         softAssert.assertEquals(actualMessage, expectedMessage, "Actual message doesn't match expected");
-        softAssert.assertTrue(dynamicControlsPageService.getCheckboxesList().isEmpty());
+        softAssert.assertTrue(dynamicControlsPageService.isCheckboxListEmpty());
         softAssert.assertAll();
     }
 
     @Test(testName = "Verify input activation")
     public void verifyInputActivation() {
         SoftAssert softAssert = new SoftAssert();
-        mainPageService.getPageLinkElementByName("Dynamic Controls").click();
+        mainPageService.clickPageLinkElementByName("Dynamic Controls");
         dynamicControlsPageService.clickEnableInputButton();
-        softAssert.assertFalse(dynamicControlsPageService.getInput().isEnabled());
+        softAssert.assertFalse(dynamicControlsPageService.isInputEnabled());
 
         String actualMessage = dynamicControlsPageService.clickEnableInputButton().getInputStatusMessageText();
         String expectedMessage = "It's enabled!";
         softAssert.assertEquals(actualMessage, expectedMessage, "Actual message doesn't match expected");
-        softAssert.assertTrue(dynamicControlsPageService.getInput().isEnabled());
+        softAssert.assertTrue(dynamicControlsPageService.isInputEnabled());
         softAssert.assertAll();
     }
 }
