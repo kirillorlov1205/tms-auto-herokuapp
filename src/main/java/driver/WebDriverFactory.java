@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 public class WebDriverFactory {
 
@@ -29,8 +30,12 @@ public class WebDriverFactory {
             }
             default: {
                 WebDriverManager.chromedriver().setup();
+                HashMap<String, Object> chromePrefs = new HashMap<>();
+                chromePrefs.put("profile.default_content_settings.popups",0);
+                chromePrefs.put("download.default_content_directory", System.getProperty("user.dir"));
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--incognito", "--remote-allow-origins=*");
+                chromeOptions.setExperimentalOption("prefs", chromePrefs);
                 driver = new ChromeDriver(chromeOptions);
             }
         }
